@@ -34,8 +34,9 @@ public class servoCommand extends CommandBase {
   public void execute() {
     //System.out.println(controller.getYButtonPressed());
     //if (controller.getYButton()) {
-        SmartDashboard.putNumber("res", (leftX.getAsDouble()+1)/2);
-        m_Subsystem.moveServo((double) ((leftX.getAsDouble()+1)/2), (double) ((rightX.getAsDouble()+1)/2));
+        SmartDashboard.putNumber("joy1", leftX.getAsDouble());
+        SmartDashboard.putNumber("joy2", rightX.getAsDouble());
+        m_Subsystem.moveServo((double) (leftX.getAsDouble()), (double) (rightX.getAsDouble()));
     //}
   }
 

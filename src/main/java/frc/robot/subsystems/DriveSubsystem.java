@@ -2,11 +2,15 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import com.revrobotics.CANSparkMax;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 
 public class DriveSubsystem extends SubsystemBase {
-    Servo servo = new Servo(0);
-    Servo servo2 = new Servo(1);
+    CANSparkMax motor1 = new CANSparkMax(0, MotorType.kBrushless);
+    CANSparkMax motor2 = new CANSparkMax(1, MotorType.kBrushless);
+    DifferentialDrive diffDrive = new DifferentialDrive(motor1, motor2);
 
     public DriveSubsystem() {
 
@@ -19,15 +23,6 @@ public class DriveSubsystem extends SubsystemBase {
 
     public void moveServo(double degrees, double degrees2) {
 
-        if (degrees > 0.4 && degrees < 0.6) {
-            degrees = 0.5;
-        }
-
-        if (degrees2 > 0.4 && degrees2 < 0.6) {
-            degrees2 = 0.5;
-        }
-
-        servo.set(degrees);
-        servo2.set(1 - degrees2);
+        diffDrive.tankDrive(Math.pow(degrees, 3), Math.pow(degrees2, 3));
     }
 }

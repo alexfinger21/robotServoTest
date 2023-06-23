@@ -8,6 +8,7 @@ import java.util.function.DoubleSupplier;
 
 import java.lang.Math;
 
+import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.XboxController.Button;
