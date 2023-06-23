@@ -6,15 +6,8 @@ package frc.robot;
 
 import java.util.function.DoubleSupplier;
 
-import java.lang.Math;
-
-import edu.wpi.first.wpilibj.motorcontrol.Spark;
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj.XboxController.Button;
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.Commands;
-import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.servoCommand;
 import frc.robot.subsystems.DriveSubsystem;
 
@@ -28,7 +21,7 @@ public class RobotContainer {
   //private final DoubleSupplier leftY = () -> (mainController.getRawAxis(1));
 
   private final DriveSubsystem driveSubsystem = new DriveSubsystem();
-  private final servoCommand servoCommand = new servoCommand(driveSubsystem, leftX, rightX, mainController);
+  private final servoCommand servoCommand = new servoCommand(driveSubsystem, leftX, rightX);
 
   
 

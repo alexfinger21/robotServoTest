@@ -2,11 +2,8 @@ package frc.robot.commands;
 
 import java.util.function.DoubleSupplier;
 
-import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj.PS4Controller.Button;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.RobotContainer;
 import frc.robot.subsystems.DriveSubsystem;
 
 public class servoCommand extends CommandBase {
@@ -14,12 +11,10 @@ public class servoCommand extends CommandBase {
     private final DriveSubsystem m_Subsystem;
     private final DoubleSupplier leftX;
     private final DoubleSupplier rightX;
-    private final XboxController controller;
-    public servoCommand(DriveSubsystem subsystem, DoubleSupplier leftyX, DoubleSupplier rightyX, XboxController controlly) {
+    public servoCommand(DriveSubsystem subsystem, DoubleSupplier leftyX, DoubleSupplier rightyX) {
         m_Subsystem = subsystem;
         leftX = leftyX;
         rightX = rightyX;
-        controller = controlly;
 
         addRequirements(subsystem);
     }
