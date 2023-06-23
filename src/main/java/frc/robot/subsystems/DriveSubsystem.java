@@ -21,7 +21,7 @@ public class DriveSubsystem extends SubsystemBase {
 
     }
 
-    public void moveServo(double degrees, double degrees2) {
+    public void driveRobot(double degrees, double degrees2) {
 
         diffDrive.tankDrive(Math.pow(degrees, 3), Math.pow(degrees2, 3));
     }
